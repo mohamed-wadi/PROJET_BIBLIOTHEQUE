@@ -1,0 +1,50 @@
+<script src="../assets/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/jquery.hoverIntent.min.js"></script>
+<script src="../assets/js/jquery.waypoints.min.js"></script>
+<script src="../assets/js/superfish.min.js"></script>
+<script src="../assets/js/owl.carousel.min.js"></script>
+<script src="../assets/js/main.js"></script>
+
+<script src="../Admin_Style/assets/vendor/chartsjs/Chart.min.js"></script>
+<script src="../Admin_Style/assets/js/dashboard-charts.js"></script>
+<script src="../Admin_Style/assets/js/script.js"></script>
+<script src="../Admin_Style/doload.js"></script>
+
+<!-- datatable -->
+<script defer src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script defer src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+<script defer src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+<script defer src="../Admin_Style/tadatable.js"></script>
+<script src="Admin_Style/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<script src="//cdn.tutorialjinni.com/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+<script src="//g.tutorialjinni.com/mojoaxel/bootstrap-select-country/dist/js/bootstrap-select-country.min.js"></script>
+
+
+<script>
+    function displayFileName(inputId) {
+        // Get the input element
+        var fileInput = document.getElementById(inputId);
+
+        // Get the display element
+        var fileNameDisplay = document.getElementById(inputId + '-name');
+
+        // Get the full file name
+        var fullFileName = fileInput.files.length > 0 ? fileInput.files[0].name : 'No file chosen';
+
+        // Display only the first 10 characters and the extension
+        var displayedFileName;
+        if (fullFileName.length > 10) {
+            var truncatedName = fullFileName.substring(0, 8);
+            var extension = fullFileName.substring(fullFileName.lastIndexOf('.'));
+            displayedFileName = truncatedName + '...' + extension;
+        } else {
+            displayedFileName = fullFileName;
+        }
+
+        // Display the modified file name or 'No file chosen' in yellow with black ellipsis
+        fileNameDisplay.innerHTML = displayedFileName.replace('...', '<span style="color: black;">...</span>');
+        fileNameDisplay.style.color = 'red';
+    }
+</script>
