@@ -17,7 +17,7 @@ if(isset($_GET['ISBN'])) {
     $fetchFileNameStmt->close();
 
     // Chemin vers le répertoire où se trouvent les fichiers à télécharger
-    $fileDir = "C:/xampp/htdocs/SHM_Bibliotheque/";
+    $fileDir = "/Applications/XAMPP/xamppfiles/htdocs/PFA/"; // Chemin corrigé pour Mac
 
     // Chemin complet du fichier à télécharger
     $filePath = $fileDir . $fileName;
