@@ -1,6 +1,17 @@
+Projet réalisé par :
+- Wadi Mohamed
+- Araichi Mohamed
+- Douaa Elgdah
+
+Sujet : Gestion de bibliothèque
+
+Groupe : 10 (3IIR)
+
+> Le rapport du projet, rédigé avec LaTeX, sera ajouté dans ce dépôt prochainement.
+
 # Projet Bibliothèque
 
-Ce dépôt contient le code source d'une application web de gestion de bibliothèque développée avec PHP.
+Ce dépôt contient le code source d'une application web de gestion de bibliothèque développée en PHP.
 
 ## Fichiers exclus du dépôt
 
