@@ -21,4 +21,9 @@ session/
 # Fichiers de sauvegarde
 *~
 *.bak
-*.swp 
+*.swp
+
+# Fichiers volumineux qui causent des problèmes de push
+plantuml.jar
+book/Emplacement/*.pdf
+*.pack
