@@ -1,0 +1,24 @@
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Fichiers de configuration spécifiques à l'environnement
+*.env
+config.local.php
+
+# Fichiers et dossiers de dépendances
+/vendor/
+/node_modules/
+
+# Fichiers de cache et de session
+/cache/
+/tmp/
+/temp/
+*.log
+error_log
+session/
+
+# Fichiers de sauvegarde
+*~
+*.bak
+*.swp 

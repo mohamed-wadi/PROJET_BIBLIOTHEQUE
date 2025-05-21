@@ -1,0 +1,93 @@
+@startuml Diagramme de cas d'utilisation - Librairie en ligne
+
+skinparam packageStyle rectangle
+skinparam actorStyle awesome
+
+left to right direction
+
+actor "Administrateur" as admin
+actor "Utilisateur" as user
+actor "Visiteur" as guest
+
+rectangle Système {
+    package "Gestion des utilisateurs" {
+        usecase "Gérer les utilisateurs" as UC_ManageUsers
+        usecase "Ajouter un utilisateur" as UC_AddUser
+        usecase "Modifier un utilisateur" as UC_EditUser
+        usecase "Supprimer un utilisateur" as UC_DeleteUser
+    }
+    
+    package "Gestion des livres" {
+        usecase "Gérer les livres" as UC_ManageBooks
+        usecase "Ajouter un livre" as UC_AddBook
+        usecase "Modifier un livre" as UC_EditBook
+        usecase "Supprimer un livre" as UC_DeleteBook
+    }
+    
+    package "Gestion des auteurs" {
+        usecase "Gérer les auteurs" as UC_ManageAuthors
+        usecase "Ajouter un auteur" as UC_AddAuthor
+        usecase "Modifier un auteur" as UC_EditAuthor
+        usecase "Supprimer un auteur" as UC_DeleteAuthor
+    }
+    
+    package "Navigation et achats" {
+        usecase "S'inscrire" as UC_Register
+        usecase "Se connecter" as UC_Login
+        usecase "Voir les livres" as UC_ViewBooks
+        usecase "Rechercher des livres" as UC_SearchBooks
+        usecase "Consulter le panier" as UC_ViewCart
+        usecase "Ajouter au panier" as UC_AddToCart
+        usecase "Passer commande" as UC_Checkout
+        usecase "Laisser un avis" as UC_Rate
+        usecase "Gérer sa liste d'envies" as UC_Wishlist
+        usecase "Télécharger un livre" as UC_Download
+        usecase "Contacter le support" as UC_Contact
+    }
+
+    package "Tableau de bord" {
+        usecase "Voir les statistiques" as UC_ViewStats
+        usecase "Traiter les demandes" as UC_ManageRequests
+    }
+}
+
+' Relations administrateur
+admin --> UC_ManageUsers
+admin --> UC_ManageBooks
+admin --> UC_ManageAuthors
+admin --> UC_ViewStats
+admin --> UC_ManageRequests
+
+' Relations utilisateur
+user --> UC_Register
+user --> UC_Login
+user --> UC_ViewBooks
+user --> UC_SearchBooks
+user --> UC_ViewCart
+user --> UC_AddToCart
+user --> UC_Checkout
+user --> UC_Rate
+user --> UC_Wishlist
+user --> UC_Download
+user --> UC_Contact
+
+' Relations visiteur
+guest --> UC_Register
+guest --> UC_Login
+guest --> UC_ViewBooks
+guest --> UC_SearchBooks
+
+' Relations d'extension
+UC_ManageUsers <.. UC_AddUser : <<extend>>
+UC_ManageUsers <.. UC_EditUser : <<extend>>
+UC_ManageUsers <.. UC_DeleteUser : <<extend>>
+
+UC_ManageBooks <.. UC_AddBook : <<extend>>
+UC_ManageBooks <.. UC_EditBook : <<extend>>
+UC_ManageBooks <.. UC_DeleteBook : <<extend>>
+
+UC_ManageAuthors <.. UC_AddAuthor : <<extend>>
+UC_ManageAuthors <.. UC_EditAuthor : <<extend>>
+UC_ManageAuthors <.. UC_DeleteAuthor : <<extend>>
+
+@enduml

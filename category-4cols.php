@@ -38,7 +38,6 @@
 
                             <div class="products mb-3">
                                 <div class="row justify-content-center" id="resultats">
-                                <?php include("includ/book_Bestsellers.php") ?>
                                     <?php
                                     include("includ/get_books.php");
                                     include("includ/modal.php");

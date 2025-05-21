@@ -48,24 +48,22 @@ if ($result->num_rows > 0) {
 }
 
 if (count($books) > 0) {
+    // We'll use a single approach for all products to avoid inconsistencies
     echo '<div class="products mb-3">';
-    echo '<div class="row justify-content-center">';
     
-    // Diviser les livres en rangées de 5
-    $chunks = array_chunk($books, 5);
-    
-    foreach ($chunks as $chunk) {
-        
-        foreach ($chunk as $book) {
-            $prix = $book["prix"];
-            $reduction = $book["reduction"];
-            $prix_avec_reduction = number_format(($prix * (1 - $reduction * 0.01)), 2);
-            $rating_val = ceil($book['rating_client']) * 100 / 5;
-            if (empty($rating_val) || is_null($rating_val)) {
-                $rating_val = 0;
-            }
-?>
-        <div class="col-book">
+    // Special handling when there's only one product to ensure proper width
+    if (count($books) == 1) {
+        echo '<div class="row single-product-row">';
+        $book = $books[0];
+        $prix = $book["prix"];
+        $reduction = $book["reduction"];
+        $prix_avec_reduction = number_format(($prix * (1 - $reduction * 0.01)), 2);
+        $rating_val = ceil($book['rating_client']) * 100 / 5;
+        if (empty($rating_val) || is_null($rating_val)) {
+            $rating_val = 0;
+        }
+        ?>
+        <div class="col-book single-product">
             <div class="product product-7 text-center h-100">
                 <figure class="product-media">
                     <a href="product.php?isbn=<?php echo $book['ISBN']; ?>">
@@ -117,17 +115,99 @@ if (count($books) > 0) {
                 </div><!-- End .product-body -->
             </div><!-- End .product -->
         </div><!-- End .col-book -->
-<?php
+        <?php
+        // Add 3 empty slots to complete the row (for 4 products per row)
+        for ($i = 0; $i < 3; $i++) {
+            echo '<div class="col-book empty-book"></div>';
+        }
+        echo '</div>'; // End .row
+    } else {
+        echo '<div class="row">';
+        
+        // Diviser les livres en rangées de 4
+        $chunks = array_chunk($books, 4);
+        
+        foreach ($chunks as $chunk) {
+            // Add a specific class to help with styling
+            echo '<div class="book-row d-flex w-100 mb-4" style="flex-wrap: wrap;">';
+            
+            foreach ($chunk as $book) {
+                $prix = $book["prix"];
+                $reduction = $book["reduction"];
+                $prix_avec_reduction = number_format(($prix * (1 - $reduction * 0.01)), 2);
+                $rating_val = ceil($book['rating_client']) * 100 / 5;
+                if (empty($rating_val) || is_null($rating_val)) {
+                    $rating_val = 0;
+                }
+                ?>
+                <div class="col-book">
+                    <div class="product product-7 text-center h-100">
+                        <figure class="product-media">
+                            <a href="product.php?isbn=<?php echo $book['ISBN']; ?>">
+                                <img src="<?php echo $book["img_livre"]; ?>" alt="Product image" class="product-image">
+                            </a>
+
+                            <div class="product-action-vertical">
+                                <?php if ($connecter) { ?>
+                                    <a class="btn-product-icon btn-wishlist btn-expandable" onclick="addToWishlist('<?php echo $book['ISBN']; ?>')"><span>add to wishlist</span></a>
+                                <?php } else {  ?>
+                                    <a class="btn-product-icon btn-wishlist btn-expandable" href="connexion/login.php"><span>add to wishlist</span></a>
+                                <?php }  ?>
+
+                                <a href="popup/quickView.php?isbn=<?php echo $book['ISBN']; ?>" class="btn-product-icon btn-quickview" title="Quick view"><span>Quick view</span></a>
+                            </div><!-- End .product-action-vertical -->
+
+                            <div class="product-action">
+                                <?php if ($connecter) { ?>
+                                    <a class="btn-product btn-cart" onclick="addToCart('<?php echo $book['ISBN']; ?>')"><span>add to cart</span></a>
+                                <?php } else {  ?>
+                                    <a class="btn-product btn-cart" href="connexion/login.php"><span>add to cart</span></a>
+                                <?php }  ?>
+                            </div><!-- End .product-action -->
+                        </figure><!-- End .product-media -->
+
+                        <div class="product-body d-flex flex-column">
+                            <div class="product-cat">
+                                <a href="#"><?php echo $book["prenom_auteur"] . " " . $book["nom_auteur"]; ?></a>
+                            </div><!-- End .product-cat -->
+                            <h3 class="product-title"><a href="product.php?isbn=<?php echo $book['ISBN']; ?>"><?php echo $book["titre_livre"]; ?></a></h3>
+
+                            <?php if ($book["reduction"] > 0) { ?>
+                                <div class="product-price">
+                                    <span class="new-price"><?php echo $prix_avec_reduction; ?> $</span>
+                                    <span class="old-price">Was <s class="text-danger"><?php echo number_format($prix, 2); ?> $</s></span>
+                                </div>
+                            <?php } else { ?>
+                                <div class="product-price">
+                                    <span class="price"><?php echo number_format($prix, 2); ?> $</span>
+                                </div>
+                            <?php } ?>
+                            
+                            <div class="ratings-container mt-auto">
+                                <div class="ratings">
+                                    <div class="ratings-val" style="width: <?php echo $rating_val; ?>%;"></div>
+                                </div><!-- End .ratings -->
+                                <span class="ratings-text">( <?php echo $book['nmbr_vote']; ?> Reviews )</span>
+                            </div><!-- End .rating-container -->
+                        </div><!-- End .product-body -->
+                    </div><!-- End .product -->
+                </div><!-- End .col-book -->
+                <?php
+            }
+            
+            // Si la rangée n'est pas complète (moins de 4 livres), ajouter des cases vides
+            $empty_slots = 4 - count($chunk);
+            for ($i = 0; $i < $empty_slots; $i++) {
+                echo '<div class="col-book empty-book"></div>';
+            }
+            
+            echo '</div>'; // End .book-row
         }
         
-        // Si la rangée n'est pas complète (moins de 5 livres), ajouter des cases vides
-        $empty_slots = 5 - count($chunk);
-        for ($i = 0; $i < $empty_slots; $i++) {
-            echo '<div class="col-book"></div>';
-        }
+        echo '</div>'; // End .row
     }
-
-    echo '</div>'; // End .row
+    
+    echo '</div>'; // End .products
 
     // Pagination pour le filtrage (optionnel)
     $count_sql = "SELECT COUNT(DISTINCT l.ISBN) as total FROM auteur AS a JOIN livre AS l ON a.id_auteur = l.id_auteur $whereSql";
@@ -172,14 +252,136 @@ if (count($books) > 0) {
             echo '</nav>';
         }
     }
-
-    echo '</div>'; // End .products
 } else {
     echo '<p class="text-center">Aucun produit ne correspond à vos critères de recherche.</p>';
 }
 
 $connexion->close();
 ?>
+
+<style>
+    /* Style pour assurer 5 colonnes égales */
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -10px;
+        margin-left: -10px;
+        width: 100%;
+    }
+    
+    .book-row {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        justify-content: flex-start;
+    }
+    
+    .col-book {
+        width: 25%;
+        flex: 0 0 25%;
+        max-width: 25%;
+        min-width: 200px;
+        padding: 0 10px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+    }
+    
+    /* Empty book slots should be visible but empty */
+    .empty-book {
+        visibility: visible;
+        height: auto;
+    }
+    
+    /* Special styling for single product display */
+    .single-product-row {
+        display: flex;
+        width: 100%;
+        justify-content: flex-start;
+    }
+    
+    .single-product {
+        width: 25% !important;
+        min-width: 220px !important;
+        flex: 0 0 25% !important;
+        max-width: 25% !important;
+    }
+    
+    /* Style des cartes de livre */
+    .product {
+        transition: all 0.3s;
+        border: 1px solid #ebebeb;
+        border-radius: 5px;
+        overflow: hidden;
+        background-color: #fff;
+        height: 100%;
+    }
+    
+    .product:hover {
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .product-media {
+        background-color: #fff;
+    }
+    
+    .product-image {
+        height: 280px;
+        object-fit: contain;
+        padding: 10px;
+        width: 100%;
+        background-color: #fff;
+    }
+    
+    .product-body {
+        padding: 15px;
+        height: 100%;
+    }
+    
+    .product-title {
+        font-size: 14px;
+        height: 40px;
+        overflow: hidden;
+        margin-bottom: 10px;
+    }
+    
+    .product-price {
+        font-size: 15px;
+        margin-bottom: 15px;
+    }
+    
+    /* Responsive design */
+    @media (max-width: 992px) {
+        .col-book {
+            width: 25%;
+        }
+        .col-book:nth-child(5n) {
+            display: none;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .col-book {
+            width: 33.333%;
+        }
+        .col-book:nth-child(4n), 
+        .col-book:nth-child(5n) {
+            display: none;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .col-book {
+            width: 50%;
+        }
+        .col-book:nth-child(3n), 
+        .col-book:nth-child(4n), 
+        .col-book:nth-child(5n) {
+            display: none;
+        }
+    }
+</style>
 
 <script>
 function changePage(page) {

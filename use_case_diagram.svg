@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="1200" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .title { font: bold 20px sans-serif; }
+    .actor { font: bold 16px sans-serif; }
+    .usecase { font: 14px sans-serif; }
+    .system { font: bold 18px sans-serif; }
+    .line { stroke: #000; stroke-width: 1.5; }
+    .box { fill: #fff; stroke: #000; stroke-width: 2; }
+    .oval { fill: #f0f0f0; stroke: #000; stroke-width: 1.5; }
+    .actor-box { fill: #e6f3ff; stroke: #3366cc; stroke-width: 2; }
+  </style>
+
+  <!-- Titre du diagramme -->
+  <text x="280" y="30" class="title">Diagramme de cas d'utilisation</text>
+  
+  <!-- Système -->
+  <rect x="100" y="50" width="600" height="1100" rx="10" ry="10" class="box" fill="#f9f9f9" />
+  <text x="370" y="80" class="system">Système</text>
+
+  <!-- Acteurs -->
+  <rect x="20" y="200" width="120" height="60" rx="5" ry="5" class="actor-box" />
+  <text x="30" y="235" class="actor">Administrateur</text>
+  
+  <rect x="340" y="200" width="120" height="60" rx="5" ry="5" class="actor-box" />
+  <text x="365" y="235" class="actor">Utilisateur</text>
+  
+  <rect x="660" y="200" width="120" height="60" rx="5" ry="5" class="actor-box" />
+  <text x="690" y="235" class="actor">Visiteur</text>
+
+  <!-- Cas d'utilisation pour Admin -->
+  <ellipse cx="150" y="350" rx="120" ry="30" class="oval" />
+  <text x="90" y="355" class="usecase">Gérer les utilisateurs</text>
+  
+  <ellipse cx="150" y="430" rx="120" ry="30" class="oval" />
+  <text x="100" y="435" class="usecase">Gérer les livres</text>
+  
+  <ellipse cx="150" y="510" rx="120" ry="30" class="oval" />
+  <text x="100" y="515" class="usecase">Gérer les auteurs</text>
+  
+  <ellipse cx="150" y="590" rx="120" ry="30" class="oval" />
+  <text x="100" y="595" class="usecase">Voir les statistiques</text>
+  
+  <ellipse cx="150" y="670" rx="120" ry="30" class="oval" />
+  <text x="100" y="675" class="usecase">Traiter les demandes</text>
+
+  <!-- Cas d'utilisation pour Utilisateur -->
+  <ellipse cx="400" y="350" rx="120" ry="30" class="oval" />
+  <text x="370" y="355" class="usecase">S'inscrire</text>
+  
+  <ellipse cx="400" y="430" rx="120" ry="30" class="oval" />
+  <text x="370" y="435" class="usecase">Se connecter</text>
+  
+  <ellipse cx="400" y="510" rx="120" ry="30" class="oval" />
+  <text x="350" y="515" class="usecase">Voir les livres</text>
+  
+  <ellipse cx="400" y="590" rx="120" ry="30" class="oval" />
+  <text x="320" y="595" class="usecase">Rechercher des livres</text>
+  
+  <ellipse cx="400" y="670" rx="120" ry="30" class="oval" />
+  <text x="340" y="675" class="usecase">Consulter le panier</text>
+  
+  <ellipse cx="400" y="750" rx="120" ry="30" class="oval" />
+  <text x="340" y="755" class="usecase">Ajouter au panier</text>
+  
+  <ellipse cx="400" y="830" rx="120" ry="30" class="oval" />
+  <text x="340" y="835" class="usecase">Passer commande</text>
+  
+  <ellipse cx="400" y="910" rx="120" ry="30" class="oval" />
+  <text x="350" y="915" class="usecase">Laisser un avis</text>
+  
+  <ellipse cx="400" y="990" rx="120" ry="30" class="oval" />
+  <text x="320" y="995" class="usecase">Gérer sa liste d'envies</text>
+  
+  <ellipse cx="400" y="1070" rx="120" ry="30" class="oval" />
+  <text x="330" y="1075" class="usecase">Télécharger un livre</text>
+  
+  <ellipse cx="400" y="1150" rx="120" ry="30" class="oval" />
+  <text x="330" y="1155" class="usecase">Contacter le support</text>
+
+  <!-- Cas d'utilisation pour Visiteur -->
+  <ellipse cx="650" y="350" rx="120" ry="30" class="oval" />
+  <text x="620" y="355" class="usecase">S'inscrire</text>
+  
+  <ellipse cx="650" y="430" rx="120" ry="30" class="oval" />
+  <text x="620" y="435" class="usecase">Se connecter</text>
+  
+  <ellipse cx="650" y="510" rx="120" ry="30" class="oval" />
+  <text x="600" y="515" class="usecase">Voir les livres</text>
+  
+  <ellipse cx="650" y="590" rx="120" ry="30" class="oval" />
+  <text x="570" y="595" class="usecase">Rechercher des livres</text>
+
+  <!-- Lignes de relations Admin -->
+  <line x1="80" y1="260" x2="140" y2="330" class="line" />
+  <line x1="80" y1="260" x2="140" y2="430" class="line" />
+  <line x1="80" y1="260" x2="140" y2="510" class="line" />
+  <line x1="80" y1="260" x2="140" y2="590" class="line" />
+  <line x1="80" y1="260" x2="140" y2="670" class="line" />
+
+  <!-- Lignes de relations Utilisateur -->
+  <line x1="400" y1="260" x2="400" y2="320" class="line" />
+  <line x1="400" y1="260" x2="400" y2="400" class="line" />
+  <line x1="400" y1="260" x2="400" y2="480" class="line" />
+  <line x1="400" y1="260" x2="400" y2="560" class="line" />
+  <line x1="400" y1="260" x2="400" y2="640" class="line" />
+  <line x1="400" y1="260" x2="400" y2="720" class="line" />
+  <line x1="400" y1="260" x2="400" y2="800" class="line" />
+  <line x1="400" y1="260" x2="400" y2="880" class="line" />
+  <line x1="400" y1="260" x2="400" y2="960" class="line" />
+  <line x1="400" y1="260" x2="400" y2="1040" class="line" />
+  <line x1="400" y1="260" x2="400" y2="1120" class="line" />
+
+  <!-- Lignes de relations Visiteur -->
+  <line x1="720" y1="260" x2="650" y2="320" class="line" />
+  <line x1="720" y1="260" x2="650" y2="400" class="line" />
+  <line x1="720" y1="260" x2="650" y2="480" class="line" />
+  <line x1="720" y1="260" x2="650" y2="560" class="line" />
+</svg>

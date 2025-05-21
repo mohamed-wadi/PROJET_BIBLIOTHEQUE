@@ -2,7 +2,7 @@
 include('connexion/connexion-DB.php');
 
 // Paramètres pour la pagination
-$limit = 15; // Nombre de produits par page
+$limit = 12; // Nombre de produits par page (multiple de 4)
 $page = $_GET['page'] ?? 1; // Numéro de la page actuelle
 
 // Calcul de l'offset pour la requête SQL
@@ -42,8 +42,8 @@ if (count($books) > 0) {
     echo '<div class="products mb-3">';
     echo '<div class="row justify-content-center" id="resultats">';
     
-    // Diviser les livres en rangées de 5
-    $chunks = array_chunk($books, 5);
+    // Diviser les livres en rangées de 4
+    $chunks = array_chunk($books, 4);
     
     foreach ($chunks as $chunk) {
         
@@ -106,12 +106,6 @@ if (count($books) > 0) {
         </div><!-- End .col-book -->
 <?php
         }
-        
-        // Si la rangée n'est pas complète (moins de 5 livres), ajouter des cases vides
-        $empty_slots = 5 - count($chunk);
-        for ($i = 0; $i < $empty_slots; $i++) {
-            echo '<div class="col-book"></div>';
-        }
     }
 
     echo '</div><!-- End .row -->';
@@ -167,7 +161,7 @@ $connexion->close();
     }
     
     .col-book {
-        width: 20%;
+        width: 25%;
         padding: 0 10px;
         margin-bottom: 20px;
         box-sizing: border-box;
