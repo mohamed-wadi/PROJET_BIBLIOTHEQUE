@@ -47,9 +47,9 @@ if ($result->num_rows > 0) {
     ?>
             <div class="col-book">
                 <div class="product h-100">
-                    <figure class="product-media">
-                        <a href="product.php?isbn=<?php echo $book['ISBN']; ?>">
-                            <img src="<?php echo $book["img_livre"]; ?>" alt="Product image" class="product-image">
+                    <figure class="product-media" style="background-color: white;">
+                        <a href="product.php?isbn=<?php echo $book['ISBN']; ?>" style="background-color: white;">
+                            <img src="<?php echo $book["img_livre"]; ?>" alt="Product image" class="product-image" style="background-color: white;">
                         </a>
                     </figure>
 
@@ -133,6 +133,14 @@ if ($result->num_rows > 0) {
         margin-bottom: 0;
         background-color: #fff;
         height: 100%;
+    }
+    
+    .product figure {
+        background-color: #fff;
+    }
+    
+    .product-image {
+        background-color: #fff;
     }
     
     .product:hover {

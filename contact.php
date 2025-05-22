@@ -66,15 +66,14 @@ $connexion->close();
                                         <ul class="contact-list">
                                             <li>
                                                 <i class="icon-map-marker"></i>
-                                                70 Washington Square South New York, NY 10012, United States
-                                            </li>
+CASBLANCA                                            </li>
                                             <li>
                                                 <i class="icon-phone"></i>
                                                 <a href="tel:#">+92 423 567</a>
                                             </li>
                                             <li>
                                                 <i class="icon-envelope"></i>
-                                                <a href="mailto:#">info@Molla.com</a>
+                                                <a href="mailto:#">shm@gmail.com</a>
                                             </li>
                                         </ul><!-- End .contact-list -->
                                     </div><!-- End .contact-info -->

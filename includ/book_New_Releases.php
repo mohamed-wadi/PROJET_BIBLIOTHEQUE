@@ -64,9 +64,9 @@ $result = $connexion->query($sql);
             ?>
                     <div class="product">
                         <!-- <span class="product-label label-sale">Salee</span> -->
-                        <figure class="product-media">
-                            <a href="product.php?isbn=<?php echo $row['ISBN']; ?>">
-                                <img src="<?php echo $row["img_livre"]; ?>" alt="Product image" class="product-image">
+                        <figure class="product-media" style="background-color: white;">
+                            <a href="product.php?isbn=<?php echo $row['ISBN']; ?>" style="background-color: white;">
+                                <img src="<?php echo $row["img_livre"]; ?>" alt="Product image" class="product-image" style="background-color: white;">
                             </a>
                         </figure><!-- End .product-media -->
 
