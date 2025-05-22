@@ -55,9 +55,9 @@ Le projet utilise XAMPP comme environnement de développement.
 Vous pouvez visionner les démos du projet sans télécharger le code :
 
 ### Interface client
-[Vidéo démonstrative de l'interface client](https://github.com/WadiMohamed/PFA/raw/main/Records/Record.mov)
+[Vidéo démonstrative de l'interface client](https://github.com/mohamed-wadi/PROJET_BIBLIOTHEQUE/raw/records-branch/Records/Record.mov)
 
 ### Interface admin
-[Vidéo démonstrative de l'interface administrateur](https://github.com/WadiMohamed/PFA/raw/main/Records/Record%20Part%20Admin.mov)
+[Vidéo démonstrative de l'interface administrateur](https://github.com/mohamed-wadi/PROJET_BIBLIOTHEQUE/raw/records-branch/Records/Record%20Part%20Admin.mov)
 
 *Note: Ces vidéos sont au format .mov et peuvent être visualisées directement depuis GitHub ou téléchargées.*
