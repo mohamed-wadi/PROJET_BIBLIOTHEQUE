@@ -34,15 +34,34 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['btn_delete'])) {
     $result_chercher_book = mysqli_query($connexion, $query_chercher_book);
 
     if ($result_chercher_book && mysqli_num_rows($result_chercher_book) > 0) {
-
-        $query_supprimer_book = "DELETE FROM livre WHERE ISBN  = 'ISBN '";
-        $result_supprimer_book = mysqli_query($connexion, $query_supprimer_book);
-
-        if ($result_supprimer_book) {
-            $message = "Book successfully deleted.";
-            $erreur = 0;
-        } else {
-            $message = "Error deleting book:" . mysqli_error($connexion);
+        
+        // Begin transaction to ensure data integrity
+        mysqli_begin_transaction($connexion);
+        
+        try {
+            // Delete related records from tables with foreign key constraints
+            $tables = ['shoppingcart', 'wishlist', 'commentaire', 'book_review', 'buy'];
+            
+            foreach ($tables as $table) {
+                $query_delete_related = "DELETE FROM $table WHERE ISBN = '$ISBN'";
+                mysqli_query($connexion, $query_delete_related);
+            }
+            
+            // Now delete the book itself
+            $query_supprimer_book = "DELETE FROM livre WHERE ISBN = '$ISBN'";
+            $result_supprimer_book = mysqli_query($connexion, $query_supprimer_book);
+            
+            if ($result_supprimer_book) {
+                mysqli_commit($connexion);
+                $message = "Book successfully deleted.";
+                $erreur = 0;
+            } else {
+                throw new Exception("Error deleting book: " . mysqli_error($connexion));
+            }
+        } catch (Exception $e) {
+            // Roll back the transaction if any query fails
+            mysqli_rollback($connexion);
+            $message = "Error: " . $e->getMessage();
             $erreur = 1;
         }
     } else {

@@ -50,6 +50,12 @@ Le projet est organisé selon la structure suivante :
 
 Le projet utilise XAMPP comme environnement de développement.
 
+## Fonctionnalités principales
+
+Pour les clients, l'application propose une expérience fluide et intuitive : une page d'accueil permet d'accéder rapidement aux nouveautés et recommandations, tandis qu'un catalogue complet offre la possibilité de consulter et rechercher des livres par titre, auteur ou catégorie, avec des fiches détaillées pour chaque ouvrage. Les utilisateurs peuvent ajouter des livres à leur panier pour préparer leurs demandes d'emprunt, consulter une FAQ interactive pour résoudre les questions courantes, s'inscrire et se connecter de manière sécurisée, gérer leur profil et visualiser l'historique de leurs emprunts ainsi que le suivi de leurs demandes en cours.
+
+Pour les administrateurs, un tableau de bord centralisé permet de superviser l'ensemble de la bibliothèque. Ils disposent d'outils pour ajouter, modifier, supprimer et organiser les livres, gérer les stocks et les catégories, ainsi que consulter, modifier ou supprimer les comptes utilisateurs. La gestion des emprunts est facilitée grâce au suivi des demandes, à la validation et au retour des livres. Des statistiques détaillées sur l'activité de la bibliothèque (emprunts, retours, utilisateurs actifs, etc.) sont accessibles, et la gestion de la FAQ se fait simplement via l'ajout ou la modification des questions/réponses.
+
 ## Démos du projet
 
 Vous pouvez visionner les démos du projet sans télécharger le code :
