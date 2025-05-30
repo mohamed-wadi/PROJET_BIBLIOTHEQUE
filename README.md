@@ -56,6 +56,14 @@ Pour les clients, l'application propose une expérience fluide et intuitive : un
 
 Pour les administrateurs, un tableau de bord centralisé permet de superviser l'ensemble de la bibliothèque. Ils disposent d'outils pour ajouter, modifier, supprimer et organiser les livres, gérer les stocks et les catégories, ainsi que consulter, modifier ou supprimer les comptes utilisateurs. La gestion des emprunts est facilitée grâce au suivi des demandes, à la validation et au retour des livres. Des statistiques détaillées sur l'activité de la bibliothèque (emprunts, retours, utilisateurs actifs, etc.) sont accessibles, et la gestion de la FAQ se fait simplement via l'ajout ou la modification des questions/réponses.
 
+## Sécurité de l'application
+
+L'application utilise un système de vérification par email pour sécuriser les comptes utilisateurs :
+
+![Vérification par email](Records/Gmail.jpeg)
+
+*Capture d'écran du code de vérification envoyé par email lors de l'inscription.*
+
 ## Démos du projet
 
 Vous pouvez visionner les démos du projet en cliquant sur les liens ci-dessous :
