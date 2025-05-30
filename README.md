@@ -58,20 +58,17 @@ Pour les administrateurs, un tableau de bord centralisé permet de superviser l'
 
 ## Démos du projet
 
-Vous pouvez visionner les démos du projet directement dans votre navigateur sans téléchargement :
+Vous pouvez visionner les démos du projet en cliquant sur les liens ci-dessous :
 
 ### Interface client
 
-<video width="640" height="360" controls>
-  <source src="https://github.com/mohamed-wadi/PROJET_BIBLIOTHEQUE/raw/records-branch/Records/Record.mov" type="video/quicktime">
-  Votre navigateur ne supporte pas la lecture de vidéos HTML5. <a href="https://github.com/mohamed-wadi/PROJET_BIBLIOTHEQUE/raw/records-branch/Records/Record.mov">Télécharger la vidéo</a>.
-</video>
+**[Cliquez ici pour voir la démo de l'interface client](https://github.com/mohamed-wadi/PROJET_BIBLIOTHEQUE/raw/records-branch/Records/Record.mov)**
 
 ### Interface admin
 
-<video width="640" height="360" controls>
-  <source src="https://github.com/mohamed-wadi/PROJET_BIBLIOTHEQUE/raw/records-branch/Records/Record%20Part%20Admin.mov" type="video/quicktime">
-  Votre navigateur ne supporte pas la lecture de vidéos HTML5. <a href="https://github.com/mohamed-wadi/PROJET_BIBLIOTHEQUE/raw/records-branch/Records/Record%20Part%20Admin.mov">Télécharger la vidéo</a>.
-</video>
+**[Cliquez ici pour voir la démo de l'interface administrateur](https://github.com/mohamed-wadi/PROJET_BIBLIOTHEQUE/raw/records-branch/Records/Record%20Part%20Admin.mov)**
 
-*Note: Ces vidéos sont au format .mov et peuvent être visualisées directement dans GitHub sans nécessiter de téléchargement supplémentaire.*
+*Note: Pour visualiser les vidéos directement sur GitHub sans les télécharger :*
+1. *Cliquez sur le lien de la vidéo souhaitée*
+2. *GitHub affichera une page avec la vidéo et un lecteur intégré*
+3. *Appuyez sur le bouton de lecture pour la visionner directement dans votre navigateur*
