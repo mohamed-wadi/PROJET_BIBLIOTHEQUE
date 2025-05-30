@@ -1,4 +1,12 @@
-Projet réalisé par :
+# Rapport du projet
+
+**[Lien vers le rapport complet sur Google Drive](https://docs.google.com/document/d/1XyiVPiHoNUmiUEnxtgku4ev7R6fv0k5r/edit?usp=sharing&ouid=112579388462764512875&rtpof=true&sd=true)**
+
+Une copie du rapport est également disponible dans le dossier `Rapport/rapport-pfa.docx` de ce dépôt.
+
+---
+
+## Projet réalisé par :
 - Wadi Mohamed
 - Araichi Mohamed
 - Douaa Elgdah
@@ -6,8 +14,6 @@ Projet réalisé par :
 Sujet : Gestion de bibliothèque
 
 Groupe : 10 (3IIR)
-
-> Le rapport du projet, rédigé avec LaTeX, sera ajouté dans ce dépôt prochainement.
 
 # Projet Bibliothèque
 
