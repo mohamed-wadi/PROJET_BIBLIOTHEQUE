@@ -60,7 +60,7 @@ Pour les administrateurs, un tableau de bord centralisé permet de superviser l'
 
 L'application utilise un système de vérification par email pour sécuriser les comptes utilisateurs :
 
-![Vérification par email](Records/Gmail.jpeg)
+<img src="Records/Gmail.jpeg" alt="Vérification par email" width="300" />
 
 *Capture d'écran du code de vérification envoyé par email lors de l'inscription.*
 
