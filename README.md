@@ -1,8 +1,6 @@
 # Rapport du projet
 
-**[Lien vers le rapport complet sur Google Drive](https://docs.google.com/document/d/1XyiVPiHoNUmiUEnxtgku4ev7R6fv0k5r/edit?usp=sharing&ouid=112579388462764512875&rtpof=true&sd=true)**
-
-Une copie du rapport est également disponible dans le dossier `Rapport/rapport-pfa.docx` de ce dépôt.
+Mohammed Araichi Vous a envoyé une copie sur mail - veuillez le consulter
 
 ---
 
@@ -14,6 +12,31 @@ Une copie du rapport est également disponible dans le dossier `Rapport/rapport-
 Sujet : Gestion de bibliothèque
 
 Groupe : 10 (3IIR)
+
+## Sécurité de l'application
+
+L'application utilise un système de vérification par email pour sécuriser les comptes utilisateurs :
+
+<img src="Records/Gmail.jpeg" alt="Vérification par email" width="300" />
+
+*Capture d'écran du code de vérification envoyé par email lors de l'inscription.*
+
+## Démos du projet
+
+Vous pouvez visionner les démos du projet en cliquant sur les liens ci-dessous :
+
+### Interface client
+
+**[Cliquez ici pour voir la démo de l'interface client](https://github.com/mohamed-wadi/PROJET_BIBLIOTHEQUE/raw/records-branch/Records/Record.mov)**
+
+### Interface admin
+
+**[Cliquez ici pour voir la démo de l'interface administrateur](https://github.com/mohamed-wadi/PROJET_BIBLIOTHEQUE/raw/records-branch/Records/Record%20Part%20Admin.mov)**
+
+*Note: Pour visualiser les vidéos directement sur GitHub sans les télécharger :*
+1. *Cliquez sur le lien de la vidéo souhaitée*
+2. *GitHub affichera une page avec la vidéo et un lecteur intégré*
+3. *Appuyez sur le bouton de lecture pour la visionner directement dans votre navigateur*
 
 # Projet Bibliothèque
 
@@ -61,28 +84,3 @@ Le projet utilise XAMPP comme environnement de développement.
 Pour les clients, l'application propose une expérience fluide et intuitive : une page d'accueil permet d'accéder rapidement aux nouveautés et recommandations, tandis qu'un catalogue complet offre la possibilité de consulter et rechercher des livres par titre, auteur ou catégorie, avec des fiches détaillées pour chaque ouvrage. Les utilisateurs peuvent ajouter des livres à leur panier pour préparer leurs demandes d'emprunt, consulter une FAQ interactive pour résoudre les questions courantes, s'inscrire et se connecter de manière sécurisée, gérer leur profil et visualiser l'historique de leurs emprunts ainsi que le suivi de leurs demandes en cours.
 
 Pour les administrateurs, un tableau de bord centralisé permet de superviser l'ensemble de la bibliothèque. Ils disposent d'outils pour ajouter, modifier, supprimer et organiser les livres, gérer les stocks et les catégories, ainsi que consulter, modifier ou supprimer les comptes utilisateurs. La gestion des emprunts est facilitée grâce au suivi des demandes, à la validation et au retour des livres. Des statistiques détaillées sur l'activité de la bibliothèque (emprunts, retours, utilisateurs actifs, etc.) sont accessibles, et la gestion de la FAQ se fait simplement via l'ajout ou la modification des questions/réponses.
-
-## Sécurité de l'application
-
-L'application utilise un système de vérification par email pour sécuriser les comptes utilisateurs :
-
-<img src="Records/Gmail.jpeg" alt="Vérification par email" width="300" />
-
-*Capture d'écran du code de vérification envoyé par email lors de l'inscription.*
-
-## Démos du projet
-
-Vous pouvez visionner les démos du projet en cliquant sur les liens ci-dessous :
-
-### Interface client
-
-**[Cliquez ici pour voir la démo de l'interface client](https://github.com/mohamed-wadi/PROJET_BIBLIOTHEQUE/raw/records-branch/Records/Record.mov)**
-
-### Interface admin
-
-**[Cliquez ici pour voir la démo de l'interface administrateur](https://github.com/mohamed-wadi/PROJET_BIBLIOTHEQUE/raw/records-branch/Records/Record%20Part%20Admin.mov)**
-
-*Note: Pour visualiser les vidéos directement sur GitHub sans les télécharger :*
-1. *Cliquez sur le lien de la vidéo souhaitée*
-2. *GitHub affichera une page avec la vidéo et un lecteur intégré*
-3. *Appuyez sur le bouton de lecture pour la visionner directement dans votre navigateur*
